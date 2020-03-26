@@ -3,3 +3,7 @@
 #define INF 0x3f3f3f3f
 typedef long long ll;
 using namespace std;
+
+int main() { _
+  
+}
