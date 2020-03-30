@@ -1,4 +1,4 @@
-/******ONLY LENGTH O(n)******/
+/******ONLY LENGTH O(n logn)******/
 string frase;
 vector<char> pilhas;
 
