@@ -1,18 +1,18 @@
-int dp[MAX][6];
-int controle[MAX][6];
-int valores[6] = {2, 5, 10, 20, 50, 100};
-int numero_notas[6];
+int dp[MAX][N];
+int control[MAX][N];
+int v[N] = {};
+int available[N];
 
-int solve(int s, int nota) {
+int solve(int s, int c) {
 	if(s == 0) return 1;
-	if(nota < 0 || s < 0) return 0;
-	if(controle[s][nota] == 1) return dp[s][nota];
+	if(c < 0 || s < 0) return 0;
+	if(control[s][c] == 1) return dp[s][c];
 
-	for(int i = 0; i <= numero_notas[nota]; i++) {
-		dp[s][nota] += solve(s - i*valores[nota], nota - 1);
+	for(int i = 0; i <= available[c]; i++) {
+		dp[s][c] += solve(s - i*valores[c], c - 1);
 	}
 
-	controle[s][nota] = 1;
-	return dp[s][nota];
+	control[s][c] = 1;
+	return dp[s][c];
 }
 

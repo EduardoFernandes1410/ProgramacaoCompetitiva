@@ -1,5 +1,5 @@
 int n, m;
-int c[1005], pd[1005];
+int c[MAX], pd[MAX];
 
 int solve(int s) {
 	if(s == 0) return 1;

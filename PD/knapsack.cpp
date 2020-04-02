@@ -1,12 +1,12 @@
 int p, n;
 ll w[MAX], v[MAX], pd[MAX][MAX];
 
-ll solve(int s, int i) {
-	if(i == n || s <= 0) return 0;
-	if(pd[s][i] != -1) return pd[s][i];
+ll solve(int s, int c) {
+	if(c == n || s <= 0) return 0;
+	if(pd[s][c] != -1) return pd[s][c];
 
-	if(s >= w[i])
-		return pd[s][i] = max(v[i] + solve(s - w[i], i + 1), solve(s, i + 1));
+	if(s >= w[c])
+		return pd[s][c] = max(v[c] + solve(s - w[c], c + 1), solve(s, c + 1));
 	else
-		return pd[s][i] = solve(s, i + 1);
+		return pd[s][c] = solve(s, c + 1);
 }
