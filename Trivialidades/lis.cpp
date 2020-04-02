@@ -1,4 +1,4 @@
-/******ONLY LENGTH O(n logn)******/
+/******ONLY LENGTH O(n * logn)******/
 string frase;
 vector<char> pilhas;
 
@@ -14,7 +14,7 @@ int lis() {
 }
 
 
-/******COMPLETE O(n logn)******/
+/******COMPLETE O(n * logn)******/
 #define MAX 100005
 string frase;
 vector<char> pilhas;
