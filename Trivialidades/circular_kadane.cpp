@@ -1,5 +1,5 @@
-int n;
 
+int n;
 int greedy(int v[]) {
 	int soma = 0, maior = 0;
 	for(int i = 0; i < n; i++) {
