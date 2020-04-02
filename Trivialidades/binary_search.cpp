@@ -1,3 +1,4 @@
+/******O(logn)******/
 //Binary search in the answer
 int ini = 0, fim = MAX - 1;
 while(ini <= fim) {
