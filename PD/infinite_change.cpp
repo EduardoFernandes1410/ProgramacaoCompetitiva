@@ -1,4 +1,4 @@
-/******O(s * n)******/
+/******O(MAX * n)******/
 int n, m;
 int c[MAX], pd[MAX];
 
