@@ -1,4 +1,4 @@
-/******O(n)******/
+/******O(logn)******/
 int exp(int base, int exponente) {
 	if(exponente == 0) return 1;
 	if(exponente == 1) return base;
