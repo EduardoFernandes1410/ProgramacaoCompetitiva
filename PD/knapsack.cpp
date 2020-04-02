@@ -1,5 +1,5 @@
 int p, n;
-ll w[2005], v[2005], pd[2005][2005];
+ll w[MAX], v[MAX], pd[MAX][MAX];
 
 ll solve(int s, int i) {
 	if(i == n || s <= 0) return 0;
