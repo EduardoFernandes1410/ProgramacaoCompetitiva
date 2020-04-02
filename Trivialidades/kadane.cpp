@@ -1,3 +1,4 @@
+/******O(n)******/
 int n, c[MAX];
 
 int maior = 0, soma = 0;
