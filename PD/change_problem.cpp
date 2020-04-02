@@ -1,3 +1,4 @@
+/******O(MAX * N * max(available))******/
 int dp[MAX][N];
 int control[MAX][N];
 int v[N] = {};
