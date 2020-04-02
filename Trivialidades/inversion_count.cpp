@@ -1,4 +1,4 @@
-//Para contar o número de pares (𝑖,𝑗), em S, com 𝑖<𝑗, tal que 𝑎𝑖>𝑎𝑗
+/******O(n * logn)******/
 int merge_sort(vector<int> &vetor) {
 	if(vetor.size() == 1) return 0;
 
