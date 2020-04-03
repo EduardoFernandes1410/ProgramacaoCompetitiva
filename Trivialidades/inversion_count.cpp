@@ -4,9 +4,7 @@ int merge_sort(vector<int> &vetor) {
 
 	vector<int> v1, v2;
 	for(int i = 0; i < vetor.size()/2; i++) v1.push_back(vetor[i]);
-	for(int i = vetor.size()/2; i < vetor.size(); i++) {
-		v2.push_back(vetor[i]);
-	}
+	for(int i = vetor.size()/2; i < vetor.size(); i++) v2.push_back(vetor[i]);
 
 	int n1 = merge_sort(v1);
 	int n2 = merge_sort(v2);
