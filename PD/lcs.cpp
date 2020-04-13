@@ -1,3 +1,4 @@
+ /******O(n*m)******/
 int n, m, s1[MAX], s2[MAX], pd[MAX][MAX];
 
 int solve(int a, int b) {
@@ -9,3 +10,6 @@ int solve(int a, int b) {
 	else
 		return pd[a][b] = max(solve(a-1, b), solve(a, b-1));
 }
+
+//n = s1.size(); m = s2.size();
+//solve(n, m)
