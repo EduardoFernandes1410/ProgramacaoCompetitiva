@@ -1,35 +1,41 @@
 /******O(1)******/
-int pai[MAX], pesos[MAX], qtd[MAX];
+int parent[MAX], weight[MAX], amount[MAX];
 
 int find(int a) {
-	if(pai[a] == a) return a;
-	else return pai[a] = find(pai[a]);
+	if(parent[a] == a) return a;
+	else return parent[a] = find(parent[a]);
 }
 
 void join(int a, int b) {
 	int x = find(a), y = find(b);
 	if(x == y) return;
 
-	if(pesos[x] > pesos[y]) {
-		pai[y] = x;
-		qtd[x] += qtd[y];
-	} else if(pesos[x] < pesos[y]) {
-		pai[x] = y;
-		qtd[y] += qtd[x];
+	if(weight[x] > weight[y]) {
+		parent[y] = x;
+		amount[x] += amount[y];
+	} else if(weight[x] < weight[y]) {
+		parent[x] = y;
+		amount[y] += amount[x];
 	}	else {
-		pai[x] = y;
-		pesos[y]++;
-		qtd[y] += qtd[x];
+		parent[x] = y;
+		weight[y]++;
+		amount[y] += amount[x];
 	}
 }
 
 int main() { 
+	int n;
 	for(int i = 1; i <= n; i++) {
-		pai[i] = i;
-		pesos[i] = 1;
-		qtd[i] = 1;
+		parent[i] = i;
+		weight[i] = 1;
+		amount[i] = 1;
 	}
 	return 0;
 }
 
-//indices de 1 a N
+//n = number of elements;
+//parent = id of parent of each node;
+//weight = distance from i to furthest child;
+//amount = number of elements in set;
+
+//indices from 1 to n;
