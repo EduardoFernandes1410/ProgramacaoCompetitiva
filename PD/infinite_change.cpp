@@ -12,3 +12,9 @@ int solve(int s) {
 	}
 	return pd[s] = 0;
 }
+
+//n = numero de moedas; 
+//m = valor;
+//c = valores das moedas;
+
+//solve(m)
