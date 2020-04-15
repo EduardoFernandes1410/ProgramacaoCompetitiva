@@ -1,9 +1,8 @@
 /******O(logn)******/
-int exp(int base, int exponente) {
-	if(exponente == 0) return 1;
-	if(exponente == 1) return base;
+int exp(int base, int expo) {
+	if(expo == 0) return 1;
+	if(expo == 1) return base;
 
-	if(exponente % 2 == 0) return exp(base * base, exponente / 2);
-	else return base * exp(base * base, (exponente - 1) / 2);
+	if(expo % 2 == 0) return exp(base * base, expo / 2);
+	else return base * exp(base * base, (expo - 1) / 2);
 }
-
