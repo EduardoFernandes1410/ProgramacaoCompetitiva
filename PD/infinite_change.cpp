@@ -15,6 +15,6 @@ int solve(int s) {
 
 //n = number of coins; 
 //m = value of change;
-//c = coins values;
+//c = coin values;
 
 //solve(m);
