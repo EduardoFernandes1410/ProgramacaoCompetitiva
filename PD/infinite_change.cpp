@@ -13,8 +13,8 @@ int solve(int s) {
 	return pd[s] = 0;
 }
 
-//n = numero de moedas; 
-//m = valor do troco;
-//c = valores das moedas;
+//n = number of coins; 
+//m = value of change;
+//c = coins values;
 
-//solve(m)
+//solve(m);
