@@ -13,6 +13,6 @@ int solve(int a, int b) {
 
 //n = s1.size(); 
 //m = s2.size();
-//s1, s2 = sequencias;
+//s1, s2 = sequencies;
 
 //solve(n, m)
