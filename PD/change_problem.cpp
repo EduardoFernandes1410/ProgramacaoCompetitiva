@@ -3,6 +3,7 @@ int dp[MAX][N];
 int control[MAX][N];
 int v[N] = {};
 int available[N];
+int s;
 
 int solve(int s, int c) {
 	if(s == 0) return 1;
@@ -17,3 +18,9 @@ int solve(int s, int c) {
 	return dp[s][c];
 }
 
+//N = number of coins;
+//v = values of coins;
+//available = amount of each coin;
+//s = change value;
+
+//solve(s, N-1);
