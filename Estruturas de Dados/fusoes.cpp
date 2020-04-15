@@ -1,20 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-#define _ ios_base::sync_with_stdio(0);cin.tie(0);
-#define endl '\n'
-#define f first
-#define s second
-#define pb push_back
-#define MAX 100005
-
-
-typedef long long ll;
-typedef pair<int, int> ii;
-
-const int INF = 0x3f3f3f3f;
-const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-
+/******O(1)******/
 int pai[MAX], pesos[MAX], qtd[MAX];
 
 int find(int a) {
@@ -39,22 +23,13 @@ void join(int a, int b) {
 	}
 }
 
-int main() { _
-	int n, k; cin >> n >> k;
-
+int main() { 
 	for(int i = 1; i <= n; i++) {
 		pai[i] = i;
 		pesos[i] = 1;
 		qtd[i] = 1;
 	}
-
-	char com;
-	int ip1, ip2;
-	for(int i = 0; i < k; i++) {
-		cin >> com >> ip1 >> ip2;
-		if(com == 'F') join(ip1, ip2);
-		else cout << (find(ip1) == find(ip2) ? 'S' : 'N') << endl;
-	}
-
 	return 0;
 }
+
+//indices de 1 a N
