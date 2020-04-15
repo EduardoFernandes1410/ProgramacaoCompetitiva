@@ -1,13 +1,18 @@
 /******O(logn)******/
-//Binary search in the answer
-int ini = 0, fim = MAX - 1;
-while(ini <= fim) {
-	media = (ini + fim) / 2;
+//Binary search in the answer (smallest answer)
+int start = 0, end = MAX - 1, out;
 
-	if(testa(media, r)) {
-		deu = media;
-		fim = media - 1;
+while(start <= end) {
+	int mean = (start + end) / 2;
+
+	if(solve(mean, r)) {
+		out = mean;
+		end = mean - 1;
 	} else {
-		ini = media + 1;
+		start = mean + 1;
 	}
 }
+
+//begin = start of range of possible values;
+//end = end of range of possible values;
+//out = smallest valid value
