@@ -1,47 +1,44 @@
 /******ONLY LENGTH O(n * logn)******/
-string frase;
-vector<char> pilhas;
-
-int lis() {
-	for(int i = 0; i < frase.length(); i++) {
-		auto it = lower_bound(pilhas.begin(), pilhas.end(), frase[i]);
+int lis(vector<int> &s) {
+	vector<int> v;
+	
+	for(int i = 0; i < s.size(); i++) {
+		auto it = lower_bound(v.begin(), v.end(), s[i]);
 							
-		if(it == pilhas.end()) pilhas.push_back(frase[i]);
-		else *it = frase[i];
+		if(it == v.end()) v.push_back(s[i]);
+		else *it = s[i];
 	}
 
-	return pilhas.size();
+	return v.size();
 }
 
 
 /******COMPLETE O(n * logn)******/
-#define MAX 100005
-string frase;
-vector<char> pilhas;
-int pos[MAX], pai[MAX];
-
-vector<char> lis() {
-	for(int i = 0; i < frase.length(); i++) {
-		auto it = lower_bound(pilhas.begin(), pilhas.end(), frase[i]);
+vector<int> lis(vector<int> &s) {
+	vector<int> v, ans;
+	int pos[MAX], parent[MAX];
+	
+	for(int i = 0; i < s.size(); i++) {
+		auto it = lower_bound(v.begin(), v.end(), s[i]);
 							
-		int p = it - pilhas.begin();
-		if(it == pilhas.end()) pilhas.push_back(frase[i]);
-		else *it = frase[i];
+		int p = it - v.begin();
+		if(it == v.end()) v.push_back(s[i]);
+		else *it = s[i];
 
 		pos[p] = i;
 
-		if(p == 0) pai[i] = -1;
-		else pai[i] = pos[p - 1];		
+		if(p == 0) parent[i] = -1;
+		else parent[i] = pos[p - 1];		
 	}
 
-	vector<char> ans;
-	int p = pos[pilhas.size() - 1];
-	
+	int p = pos[v.size() - 1];
 	while(p >= 0) {
-		ans.push_back(frase[p]);
-		p = pai[p];
+		ans.push_back(s[p]);
+		p = parent[p];
 	}
 
+	reverse(ans.begin(), ans.end());
 	return ans;
 }
 
+//s = original sequence
