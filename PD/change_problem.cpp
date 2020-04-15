@@ -19,7 +19,7 @@ int solve(int s, int c) {
 }
 
 //N = number of coins;
-//v = values of coins;
+//v = coin values;
 //available = amount of each coin;
 //s = change value;
 
