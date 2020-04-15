@@ -11,5 +11,8 @@ int solve(int a, int b) {
 		return pd[a][b] = max(solve(a-1, b), solve(a, b-1));
 }
 
-//n = s1.size(); m = s2.size();
+//n = s1.size(); 
+//m = s2.size();
+//s1, s2 = sequencias;
+
 //solve(n, m)
