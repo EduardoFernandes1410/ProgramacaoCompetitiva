@@ -1,3 +1,4 @@
+/******O(MAX * MAX)******/
 int p, n;
 ll w[MAX], v[MAX], pd[MAX][MAX];
 
@@ -10,3 +11,10 @@ ll solve(int s, int c) {
 	else
 		return pd[s][c] = solve(s, c + 1);
 }
+
+//p = max capacity;
+//n = number of items;
+//w = item weights;
+//v = item values;
+
+//solve(p, 0);
