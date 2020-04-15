@@ -25,3 +25,5 @@ int circular_kadane(){
 
 //n = number of values in sequence
 //circular_kadane = reads sequence and return largest sum
+//v = original sequence
+//vi = inverted sequence
