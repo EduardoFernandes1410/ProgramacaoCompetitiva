@@ -14,7 +14,7 @@ int solve(int s) {
 }
 
 //n = numero de moedas; 
-//m = valor;
+//m = valor do troco;
 //c = valores das moedas;
 
 //solve(m)
