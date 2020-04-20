@@ -6,6 +6,7 @@ using namespace std;
 #define f first
 #define s second
 #define pb push_back
+#define FOR(i,a,n) for(int i=a;i<n;i++)
 
 typedef long long ll;
 typedef pair<int, int> ii;
