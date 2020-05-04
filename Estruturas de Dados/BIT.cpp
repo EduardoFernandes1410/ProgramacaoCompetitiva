@@ -1,4 +1,5 @@
 /******O(logn)******/
+//sum from 1 to x
 int query(vector<int> &bit, int x) {
 	int res = 0;
 	while(x) {
@@ -9,6 +10,7 @@ int query(vector<int> &bit, int x) {
 }
 
 /******O(logn)******/
+//add v to position x
 void add(vector<int> &bit, int x, int v) {
 	while(x < bit.size()) {
 		bit[x] += v;
