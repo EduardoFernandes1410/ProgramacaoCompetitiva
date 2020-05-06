@@ -7,7 +7,7 @@ int sum(int x, int y){
   
 	for(int i = x; i > 0; i -= i&-i){
 		for(int j = y; j > 0; j -= j&-j){
-			resp += bit[i][j];
+			res += bit[i][j];
 		}
 	}
   
