@@ -2,25 +2,25 @@ vector<int> seg(4*MAX), lazy(4*MAX, 0), v(MAX);
 
 /******O(logn)******/
 //update array to 'v' from 'lt' to 'rt'
-int update(int i, int l, int r, int lt, int rt, int v) {
+void update(int i, int l, int r, int lt, int rt, int v) {
 	if(lazy[i] > 0) {
 		seg[i] = (r - l + 1) * lazy[i];
 		if(l != r) lazy[2*i] = lazy[2*i + 1] = lazy[i];
 		lazy[i] = 0;
 	}
 
-	if(l > rt or r < lt) return 0;
+	if(l > rt or r < lt) return;
 	if(l >= lt and r <= rt) {
 		seg[i] = (r - l + 1) * v;
 		if(l != r) lazy[2*i] = lazy[2*i + 1] = v;
-		return seg[i];
+		return;
 	}
 
 	int meio = (l+r)/2;
 	update(2*i, l, meio, lt, rt, v);
 	update(2*i + 1, meio + 1, r, lt, rt, v);
 
-	return seg[i] = seg[2*i] + seg[2*i + 1];
+	seg[i] = seg[2*i] + seg[2*i + 1];
 }
 
 /******O(logn)******/
