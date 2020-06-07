@@ -1,20 +1,20 @@
-/******O(MAX * n)******/
-int n, m;
-int c[MAX], pd[MAX];
+/******O(MAX * coins.size())******/
+int dp[MAX];
 
-int solve(int s) {
-	if(s == 0) return 1;
-	if(s < 0) return 0;
-	if(pd[s] != -1) return pd[s];
+int change(int amount, vector<int>& coins) {
+	memset(dp, 0, sizeof(dp));
 
-	for(int i = 0; i < n; i++) {
-		if(solve(s - c[i])) return pd[s] = 1; 
+	dp[0] = 1;
+	for(int i = 0; i < coins.size(); i++) {
+	    for(int j = coins[i]; j <= amount; j++) {
+		dp[j] += dp[j - coins[i]];;
+	    }
 	}
-	return pd[s] = 0;
+
+	return dp[amount];
 }
 
-//n = number of coins; 
-//m = value of change;
-//c = coin values;
+//amount = value of change;
+//coins = coin values;
 
-//solve(m);
+//change(amount, coins);
