@@ -2,8 +2,8 @@ int spf[MAX];
 
 /******O(MAX)******/
 void make_spf() {
-	FOR(i,1,MAX) spf[i] = 1;
-	FOR(i,2,MAX) {
+	for(int i = 1; i < MAX; i++) spf[i] = 1;
+	for(int i = 2; i < MAX; i++) {
 		if(spf[i] == 1) {
 			for(int j = i; j < MAX; j += i) spf[j] = i;
 		}
