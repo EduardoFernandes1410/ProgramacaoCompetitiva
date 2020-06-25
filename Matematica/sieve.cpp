@@ -3,7 +3,7 @@ bool sieve[MAX];
 
 /******O(MAX)******/
 void make_sieve() {
-  memset(sieve, 0, sizeof(sieve));
+	memset(sieve, 0, sizeof(sieve));
 	for(int i = 2; i < MAX; i++) {
 		if(!sieve[i]) {
 			primes.push_back(i);
