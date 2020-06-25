@@ -1,6 +1,6 @@
 int spf[MAX];
 
-/******O(MAX)******/
+/******O(MAX * log(log(MAX)))******/
 void make_spf() {
 	for(int i = 1; i < MAX; i++) spf[i] = 1;
 	for(int i = 2; i < MAX; i++) {
