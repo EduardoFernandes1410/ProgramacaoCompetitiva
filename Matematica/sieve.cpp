@@ -1,7 +1,7 @@
 vector<int> primes;
 bool sieve[MAX];
 
-/******O(MAX)******/
+/******O(MAX * log(log(MAX)))******/
 void make_sieve() {
 	memset(sieve, 0, sizeof(sieve));
 	for(int i = 2; i < MAX; i++) {
