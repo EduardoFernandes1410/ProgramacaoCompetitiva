@@ -1,6 +1,6 @@
 // Coded by @brunomaletta
 
-// Funciona do C++11 pra cima
+// Requires C++11 or higher
 
 // Headers
 #include <ext/pb_ds/assoc_container.hpp>
