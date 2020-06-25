@@ -17,3 +17,6 @@ void factor(vector<int> &fact, int n) {
 		n /= spf[n];
 	}
 }
+
+//call 'make_spf()' first
+//then call 'factor(fact, n)' for the number you want to factor
