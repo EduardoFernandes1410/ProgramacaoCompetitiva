@@ -44,3 +44,5 @@ Node* build(int l, int r) {
 	int meio = (l+r)/2;
 	return new Node(build(l, meio), build(meio + 1, r));
 }
+
+//indices from 1 to n
