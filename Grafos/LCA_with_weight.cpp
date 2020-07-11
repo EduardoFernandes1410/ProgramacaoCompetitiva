@@ -8,7 +8,7 @@ namespace LCA {
 
 	SegmentTree<pair<int, int>> seg;
   
-  /******O(n)******/
+  	/******O(n)******/
 	//performes euler tour on tree 'v'
 	void euler_tour(int root, int level, vector<vector<int>> &v) {
 		euler.push_back({level, root});
@@ -25,7 +25,7 @@ namespace LCA {
 		}
 	}
 
-  /******O(n * logn)******/
+  	/******O(n * logn)******/
 	//builds and initializes everything needed for tree 'v'
 	void build(vector<vector<int>> &v) {
 		int n = v.size();
@@ -44,8 +44,8 @@ namespace LCA {
 		seg = SegmentTree<pair<int, int>>(euler, {INF, INF});
 	}
 
-  /******O(n * logn)******/
-  //builds and initializes everything needed for weighted distance in 'v'
+  	/******O(n * logn)******/
+  	//builds and initializes everything needed for weighted distance in 'v'
 	void build_ancestor(vector<ll> &distance) {
 		int n = height.size();
 		ancestor.resize(n, vector<pair<int, ll>>(30, {-1, 0}));
@@ -63,14 +63,14 @@ namespace LCA {
 		}
 	}
 
-  /******O(logn)******/
+ 	/******O(logn)******/
 	//returns Lowest Common Ancestor of nodes 'a' and 'b' in tree 'v'
 	int lca(int a, int b) {
 		if(first[a] > first[b]) swap(a, b);
 		return (seg.query(first[a], first[b])).second;
 	}
 
-  /******O(logn)******/
+  	/******O(logn)******/
 	//returns weighted distance between nodes 'a' and 'b' in tree 'v'
 	ll dist(int a, int b) {
 		int common_ancestor = lca(a, b);
@@ -105,6 +105,6 @@ vector<vector<int>> v(n); //adjacency list of tree
 vector<ll> distances(n); //distance of element i to its parent
 
 LCA::build(v); //initializes LCA stuff
-LCA::build_ancestor(distancias); //initializes weighted distance stuff
+LCA::build_ancestor(distances); //initializes weighted distance stuff
 LCA::lca(a, b); //gets LCA of nodes 'a' and 'b'
 LCA::dist(a, b); //gets weighted distance between nodes 'a' and 'b'
