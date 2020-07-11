@@ -51,7 +51,7 @@ namespace LCA {
 	}
 };
 
-vector<vector<int>> &v; //adjacency list of tree
+vector<vector<int>> v(n); //adjacency list of tree - indices from 0 to n-1
 LCA::build(v); //builds LCA stuff
 LCA::lca(a, b);
 LCA::dist(a, b);
