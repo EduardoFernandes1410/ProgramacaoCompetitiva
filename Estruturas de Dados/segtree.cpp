@@ -18,12 +18,12 @@ template<typename T> struct SegmentTree {
 	}
 
 	//merge nodes - ***change function to your needs***
-	T merge(T a, T b) { return a + b; //*todo* }
+	T merge(T a, T b) { return min(a, b); } //*todo*
 
 	//propagate lazy - ***change to your needs***
 	void prop(int i, int l, int r, bool flag = false) {
 		if(lazy[i] != neutral or flag) {
-			seg[i] = (r - l + 1) * lazy[i]; //*todo*
+			seg[i] = lazy[i]; //*todo*
 			if(l != r) {
 				lazy[2*i] = lazy[i]; //*todo*
 				lazy[2*i + 1] = lazy[i]; //*todo*
