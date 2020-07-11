@@ -83,8 +83,7 @@ template<typename T> struct SegmentTree {
 	}
 };
 	
-vector<YOUR_TYPE> v(n); //base array for segtree
+vector<YOUR_TYPE> v(n); //base array for segtree - indices from 0 to n-1
 SegmentTree<YOUR_TYPE> seg(v, NEUTRAL_ELEMENT); //initializes object
 seg.update(l, r, value); //updates segtree in [l,r]
 seg.query(l, r); //performs query in [l,r]
-//indices from 0 to n-1
