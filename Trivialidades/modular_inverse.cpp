@@ -10,5 +10,5 @@ ll fexp(ll x, ll y, ll MOD) {
 
 //Returns modular inverse of 'a' for prime number MOD
 ll mod_inv(ll a, ll MOD) {
-  return fexp(a, MOD-2);
+  return fexp(a, MOD-2, MOD);
 }
