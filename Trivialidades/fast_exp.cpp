@@ -1,6 +1,6 @@
 /******O(logn)******/
 //recursive
-ll exp(ll base, ll expo) {
+ll fexp(ll base, ll expo) {
 	if(expo == 0) return 1;
 	if(expo == 1) return base;
 
