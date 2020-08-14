@@ -51,4 +51,4 @@ struct Kuhn {
 
 int n, m; //size of left and right partitions of the graph, respectively
 vector<vector<int>> g(n); //bipartited graph - indices from 0 to n-1
-Kuhn K(n, m, g);
+Kuhn K(n, m, g); //initializes Kuhn struct
