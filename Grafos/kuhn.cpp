@@ -27,7 +27,7 @@ struct Kuhn {
 		return false;
 	}
 	
-  	/******O(|V| * |M|)******/
+  	/******O(|V| * |E|)******/
 	//Returns the cardinality of the maximum match in the bipartited graph 'g'
 	ll match() {
 		ll res = 0;
