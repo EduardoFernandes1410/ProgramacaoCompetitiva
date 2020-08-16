@@ -34,9 +34,9 @@ template<typename T> struct SegmentTree {
 
 	/******O(logn)******/
 	//update segtree
-	void update(int lt, int rt, int value) { update(lt, rt, 1, 0, size-1, value); }
+	void update(int lt, int rt, T value) { update(lt, rt, 1, 0, size-1, value); }
 
-	void update(int lt, int rt, int i, int l, int r, int value) {
+	void update(int lt, int rt, int i, int l, int r, T value) {
 		prop(i, l, r);
 
 		if(l > rt or r < lt) return;
