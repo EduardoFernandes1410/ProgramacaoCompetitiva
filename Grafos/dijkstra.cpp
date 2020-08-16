@@ -22,6 +22,6 @@ void dijkstra(int root, vector<int> &dist, vector<vector<pair<int, int>>> &v) {
 	}
 }
 
-vector<vector<pair<int, int>>> v(n); //adjacency list of graph
+vector<vector<pair<int, int>>> v(n); //adjacency list of graph - {node, dist}
 vector<int> dist(n, INF);
 dijkstra(k, dist, v);
