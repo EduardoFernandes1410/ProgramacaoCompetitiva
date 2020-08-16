@@ -11,6 +11,7 @@ void dijkstra(int root, vector<int> &dist, vector<vector<pair<int, int>>> &v) {
 	while(next.size()) {
 		auto p = next.top();
 		next.pop();
+		if(p.f > dist[p.s]) continue;
 
 		for(auto i : v[p.s]) {
 			int aux = dist[p.s] + i.s;
