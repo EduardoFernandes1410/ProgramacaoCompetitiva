@@ -50,5 +50,5 @@ struct Kuhn {
 };
 
 int n, m; //size of left and right partitions of the graph, respectively
-vector<vector<int>> g(n); //bipartited graph - indices from 0 to n-1
+vector<vector<int>> g(n); //bipartited graph - adjacency list of n vertices [0,n) from partition A connected to m vertices [0, m) from partition B
 Kuhn K(n, m, g); //initializes Kuhn struct
