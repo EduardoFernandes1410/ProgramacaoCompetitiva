@@ -4,7 +4,7 @@ struct Kuhn {
 	vector<int> redA, redB, marcB;
 	vector<vector<int>> g;
 
-	kuhn(int nin, int min, vector<vector<int>> &gin) {
+	Kuhn(int nin, int min, vector<vector<int>> &gin) {
 		n = nin, m = min;
 		redA.resize(n, -1);
 		redB.resize(m, -1);	
