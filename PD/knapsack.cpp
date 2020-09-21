@@ -30,3 +30,5 @@ for(int i = 0; i < n; i++) {
 //c = max capacity;
 //w = item weights;
 //v = item values;
+//ans = itens from best answer;
+//dp[0][w] = best answer;
