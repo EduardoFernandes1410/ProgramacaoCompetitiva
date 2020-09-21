@@ -26,9 +26,7 @@ for(int i = 0; i < n; i++) {
 	}
 }
 
-//c = max capacity;
 //n = number of items;
+//c = max capacity;
 //w = item weights;
 //v = item values;
-
-//solve(p, 0);
