@@ -5,7 +5,7 @@ vector<vector<ll>> dp(n+5, vector<ll>(c+5, 0));
 /******O(n * c)******/
 // Calculate best aswer and stores it in dp[0][c]
 for(ll i = n-1; i >= 0; i--) {
-	for(ll j = 0; j <= w; j++) {
+	for(ll j = 0; j <= c; j++) {
 		if(j < w[i]) dp[i][j] = dp[i+1][j];
 		else dp[i][j] = max(v[i] + dp[i+1][j-w[i]], dp[i+1][j]);
 	}
@@ -31,4 +31,4 @@ for(int i = 0; i < n; i++) {
 //w = item weights;
 //v = item values;
 //ans = itens from best answer;
-//dp[0][w] = best answer;
+//dp[0][c] = best answer;
