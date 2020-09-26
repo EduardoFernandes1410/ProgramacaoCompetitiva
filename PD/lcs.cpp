@@ -30,3 +30,4 @@ while(out.size() < og) {
 		else y--;
 	}
 }
+reverse(out.begin(), out.end());
