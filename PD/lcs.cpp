@@ -1,18 +1,32 @@
- /******O(n*m)******/
-int n, m, s1[MAX], s2[MAX], pd[MAX][MAX];
+ 
+string a, b;
+ll dp[MAX][MAX];
 
-int solve(int a, int b) {
-	if(!a || !b) return 0;
-	if(pd[a][b] != -1) return pd[a][b];
-
-	if(s1[a-1] == s2[b-1])
-		return pd[a][b] = 1 + solve(a-1, b-1);
-	else
-		return pd[a][b] = max(solve(a-1, b), solve(a, b-1));
+/******O(n*m)******/
+// Calculates |lcs| of strings 'a' and 'b' and stores it in dp[a.size()][b.size()]
+for(int i = 0; i <= a.size(); i++) {
+	for(int j = 0; j <= b.size(); j++) {
+		if(!i or !j) dp[i][j] = 0;
+		else {
+			if(a[i-1] == b[j-1]) dp[i][j] = 1 + dp[i-1][j-1];
+			else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+		}
+	}
 }
 
-//n = s1.size(); 
-//m = s2.size();
-//s1, s2 = sequencies;
+/******O(n+m)******/
+// Recovers lcs and stores it in 'out'
+ll og = res = dp[a.size()][b.size()];
+vector<char> out;
 
-//solve(n, m)
+int x = a.size(), y = b.size();
+while(out.size() < og) {
+	if(a[x-1] == b[y-1]) {
+		out.pb(a[x-1]);
+		res--;
+		x--; y--;
+	} else {
+		if(y == 0 or (x > 0 and (dp[x-1][y] > dp[x][y-1]))) x--;
+		else y--;
+	}
+}
