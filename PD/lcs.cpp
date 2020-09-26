@@ -1,4 +1,3 @@
- 
 string a, b;
 ll dp[MAX][MAX];
 
