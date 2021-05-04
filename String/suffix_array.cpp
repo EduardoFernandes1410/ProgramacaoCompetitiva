@@ -32,3 +32,26 @@ vector<int> suffix_array(string s) {
 
   return p;
 }
+
+/******O(n)******/
+// returns the longest common prefix between s[sa[i],..,n-1] and s[sa[i+1],..,n-1]
+vector<int> kasai(string s, vector<int> &sa) {
+  s += "$";
+  int k = 0, n = s.size();
+  vector<int> p(n), rc(n);
+
+  for(int i = 0; i < n; i++) rc[sa[i]] = i;
+  for(int i = 0; i < n-1; i++) {
+    int prev = sa[rc[i]-1];
+    for(int j = k; j < n-1; j++) {
+      if(s[i + j] == s[prev + j]) k++;
+      else {
+        p[rc[i]-1] = k;
+        k = max(k-1, 0);
+        break;
+      }
+    }
+  }
+
+  return p;
+}
