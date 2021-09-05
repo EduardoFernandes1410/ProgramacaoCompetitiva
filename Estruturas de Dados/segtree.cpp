@@ -67,7 +67,7 @@ template<typename T> struct SegmentTree {
 		return merge(query(lt, rt, 2*i, l, meio), query(lt, rt, 2*i + 1, meio + 1, r));
 	}
 
-	/******O(logn)******/
+	/******O(n)******/
 	//builds segtree
 	void build(vector<T> &v, int i, int l, int r) {
 		if(l == r) {
